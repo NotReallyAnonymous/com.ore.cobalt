@@ -1,0 +1,11 @@
+{
+	"required": true,
+	"package": "com.ore.cobalt.mixin.client",
+	"compatibilityLevel": "JAVA_21",
+	"client": [
+		"ExampleClientMixin"
+	],
+	"injectors": {
+		"defaultRequire": 1
+	}
+}
