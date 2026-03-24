@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "###",
+    "###",
+    "###"
+  ],
+  "key": {
+    "#": {
+      "item": "cobalt:raw_cobalt"
+    }
+  },
+  "result": {
+    "id": "cobalt:cobalt_block",
+    "count": 1
+  }
+}

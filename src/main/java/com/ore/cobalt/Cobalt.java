@@ -19,6 +19,7 @@ public class Cobalt implements ModInitializer {
 		// However, some things (like resources) may still be uninitialized.
 		// Proceed with mild caution.
 
-		LOGGER.info("Hello Fabric world!");
+		CobaltBlocks.register();
+		CobaltItems.register();
 	}
 }
