@@ -15,13 +15,13 @@ public final class CobaltBlocks {
     public static final Block COBALT_ORE_BLOCK = registerBlock(
             "cobalt_ore_block",
             Block::new,
-            BlockBehaviour.Properties.of().strength(4.0F, 4.0F).requiresCorrectToolForDrops().sound(SoundType.STONE)
+            BlockBehaviour.Properties.of().strength(3.0F, 3.0F).requiresCorrectToolForDrops().sound(SoundType.STONE)
     );
 
     public static final Block COBALT_BLOCK = registerBlock(
             "cobalt_block",
             Block::new,
-            BlockBehaviour.Properties.of().strength(5.0F, 6.0F).requiresCorrectToolForDrops().sound(SoundType.METAL)
+            BlockBehaviour.Properties.of().strength(3.5F, 4.5F).requiresCorrectToolForDrops().sound(SoundType.METAL)
     );
 
     private CobaltBlocks() {
