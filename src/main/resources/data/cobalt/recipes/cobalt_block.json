@@ -1,17 +1,16 @@
 {
   "type": "minecraft:crafting_shaped",
+  "category": "building",
   "pattern": [
     "###",
     "###",
     "###"
   ],
   "key": {
-    "#": {
-      "item": "cobalt:raw_cobalt"
-    }
+    "#": "cobalt:raw_cobalt"
   },
   "result": {
-    "item": "cobalt:cobalt_block",
+    "id": "cobalt:cobalt_block",
     "count": 1
   }
 }
