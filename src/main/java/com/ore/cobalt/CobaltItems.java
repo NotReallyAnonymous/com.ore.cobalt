@@ -3,29 +3,38 @@ package com.ore.cobalt;
 import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
 import net.minecraft.core.Registry;
 import net.minecraft.core.registries.BuiltInRegistries;
+import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.Identifier;
+import net.minecraft.resources.ResourceKey;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.CreativeModeTabs;
 import net.minecraft.world.item.Item;
 
+import java.util.function.Function;
+
 public final class CobaltItems {
-    public static final Item RAW_COBALT = registerItem("raw_cobalt", new Item(new Item.Properties()));
+    public static final Item RAW_COBALT = registerItem("raw_cobalt", Item::new, new Item.Properties());
 
     public static final Item COBALT_ORE_BLOCK = registerItem(
             "cobalt_ore_block",
-            new BlockItem(CobaltBlocks.COBALT_ORE_BLOCK, new Item.Properties())
+            properties -> new BlockItem(CobaltBlocks.COBALT_ORE_BLOCK, properties),
+            new Item.Properties()
     );
 
     public static final Item COBALT_BLOCK = registerItem(
             "cobalt_block",
-            new BlockItem(CobaltBlocks.COBALT_BLOCK, new Item.Properties())
+            properties -> new BlockItem(CobaltBlocks.COBALT_BLOCK, properties),
+            new Item.Properties()
     );
 
     private CobaltItems() {
     }
 
-    private static Item registerItem(String name, Item item) {
-        return Registry.register(BuiltInRegistries.ITEM, Identifier.fromNamespaceAndPath(Cobalt.MOD_ID, name), item);
+    private static Item registerItem(String name, Function<Item.Properties, Item> itemFactory, Item.Properties properties) {
+        Identifier id = Identifier.fromNamespaceAndPath(Cobalt.MOD_ID, name);
+        ResourceKey<Item> key = ResourceKey.create(Registries.ITEM, id);
+        Item item = itemFactory.apply(properties.setId(key));
+        return Registry.register(BuiltInRegistries.ITEM, id, item);
     }
 
     public static void register() {
