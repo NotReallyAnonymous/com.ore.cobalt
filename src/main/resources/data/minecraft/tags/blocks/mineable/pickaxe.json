@@ -1,0 +1,7 @@
+{
+  "replace": false,
+  "values": [
+    "cobalt:cobalt_ore_block",
+    "cobalt:cobalt_block"
+  ]
+}
